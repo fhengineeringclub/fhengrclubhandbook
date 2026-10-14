@@ -18,9 +18,8 @@ export interface OfficersData {
 }
 
 export interface ProjectsData {
-    projects: Array<{
+    projects: Record<string, {
         image: string;
-        title: string;
         desc: string;
     }>;
 }

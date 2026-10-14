@@ -46,20 +46,24 @@ export async function loadClubData(): Promise<void> {
         });
 
         // Update Meeting Location & Time
-        const meetingCallout = document.querySelector('#contact .callout p');
-        if (meetingCallout) {
-            meetingCallout.textContent = `${info.room}, ${info.schedule}`;
-        }
+        document.querySelectorAll<HTMLElement>('#contact .callout p, .meeting-details')
+            .forEach(el => el.textContent = `${info.room}, ${info.schedule}`);
 
         // 2. Populate Projects Grid
         const projGrid = document.querySelector('.proj-grid');
         if (projGrid) {
-            projGrid.innerHTML = projectsData.projects.map(p => `
+            projGrid.innerHTML = Object.entries(projectsData.projects).map(([title, project]) => `
         <div class="proj">
-          <img src="${p.image}" alt="${p.title}" loading="lazy">
-          <div><h3>${p.title}</h3><p>${p.desc}</p></div>
+          <img src="${project.image}" alt="${title}" loading="lazy">
+          <div><h3>${title}</h3><p>${project.desc}</p></div>
         </div>
       `).join('');
+        }
+
+        const rcPlaneImage = document.querySelector<HTMLImageElement>('.rc-plane-image');
+        const rcPlane = projectsData.projects['RC Plane'];
+        if (rcPlaneImage && rcPlane) {
+            rcPlaneImage.src = rcPlane.image;
         }
 
         // 3. Populate Events Timeline
@@ -81,7 +85,7 @@ export async function loadClubData(): Promise<void> {
         </div>
       `).join('');
 
-            const advisorBox = document.querySelector('#officers .callout');
+            const advisorBox = document.querySelector('#officers .advisors');
             if (advisorBox) {
                 advisorBox.innerHTML = `
           <p class="eyebrow light">Faculty Advisors</p>

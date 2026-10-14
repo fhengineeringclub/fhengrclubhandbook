@@ -1,46 +1,38 @@
 {
-  "projects": [
-    {
-      "title": "RC Plane",
+  "projects": {
+    "RC Plane": {
       "desc": "A custom fixed-wing drone built from scratch with CAD, 3D printing, and flight testing.",
       "image": "/images/rc-plane.jpg"
     },
-    {
-      "title": "CNC Router",
+    "CNC Router": {
       "desc": "A computer-controlled router built from aluminum extrusion to carve wood, plastic, and metal.",
       "image": "/images/cnc-router.jpg"
     },
-    {
-      "title": "Fish Roe-bot",
+    "Fish Roe-bot": {
       "desc": "A biomimetic robotic fish modeled after the Skipjack Tuna's swimming mechanics.",
       "image": "/images/fish-roebot.jpg"
     },
-    {
-      "title": "RC Go-Kart",
+    "RC Go-Kart": {
       "desc": "A full systems upgrade: new electronics cover, wheels, rear differential, and reverse-drive.",
       "image": "/images/rc-go-kart.jpg"
     },
-    {
-      "title": "UR10 Robotic Arm",
+    "UR10 Robotic Arm": {
       "desc": "Custom hardware, software, and vision systems for automation and control research.",
       "image": "/images/ur10-arm.jpg"
     },
-    {
-      "title": "Gardening Automation",
+    "Gardening Automation": {
       "desc": "Sensors and microcontrollers that water Foothill's garden beds automatically.",
       "image": "/images/gardening.jpg"
     },
-    {
-      "title": "Welding",
+    "Welding": {
       "desc": "Learn flux-core welding at any skill level. We provide materials and safety gear.",
       "image": "/images/welding.jpg"
     },
-    {
-      "title": "Physics Show",
+    "Physics Show": {
       "desc": "Build and run live demos for Foothill's physics show, seen by 20,000+ guests a year.",
       "image": "/images/physics-show.jpg"
     }
-  ],
+  },
   "starterIdeas": {
     "firstBuilds": [
       {

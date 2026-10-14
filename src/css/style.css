@@ -130,17 +130,18 @@ ul.list.diamonds li::before{
 }
 
 /* highlighted boxes */
-.callout{
+.callout, .advisors{
     background:var(--navy); color:var(--cream);
     border-radius:14px; padding:20px 22px; margin-top:22px;
     font-weight:600; font-size:16px; line-height:1.5;
 }
-section.dark .callout, section.navy .callout{background:rgba(255,255,255,.08)}
+section.dark .callout, section.navy .callout,
+section.dark .advisors, section.navy .advisors{background:rgba(255,255,255,.08)}
 .callout.soft{background:var(--cream-2); color:var(--ink); font-weight:500}
 .callout.row{display:flex; gap:14px; align-items:center}
 .callout.row svg{width:26px; height:26px; flex:0 0 auto; color:var(--gold-light)}
 .callout.soft.row svg{width:24px; height:24px; color:var(--gold)}
-.callout .eyebrow{margin-bottom:6px}
+.callout .eyebrow, .advisors .eyebrow{margin-bottom:6px}
 .mt-10{margin-top:10px}
 .mt-20{margin-top:20px}
 .mt-26{margin-top:26px}
