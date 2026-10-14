@@ -1,0 +1,92 @@
+{
+  "projects": [
+    {
+      "title": "RC Plane",
+      "desc": "A custom fixed-wing drone built from scratch with CAD, 3D printing, and flight testing.",
+      "image": "/images/rc-plane.jpg"
+    },
+    {
+      "title": "CNC Router",
+      "desc": "A computer-controlled router built from aluminum extrusion to carve wood, plastic, and metal.",
+      "image": "/images/cnc-router.jpg"
+    },
+    {
+      "title": "Fish Roe-bot",
+      "desc": "A biomimetic robotic fish modeled after the Skipjack Tuna's swimming mechanics.",
+      "image": "/images/fish-roebot.jpg"
+    },
+    {
+      "title": "RC Go-Kart",
+      "desc": "A full systems upgrade: new electronics cover, wheels, rear differential, and reverse-drive.",
+      "image": "/images/rc-go-kart.jpg"
+    },
+    {
+      "title": "UR10 Robotic Arm",
+      "desc": "Custom hardware, software, and vision systems for automation and control research.",
+      "image": "/images/ur10-arm.jpg"
+    },
+    {
+      "title": "Gardening Automation",
+      "desc": "Sensors and microcontrollers that water Foothill's garden beds automatically.",
+      "image": "/images/gardening.jpg"
+    },
+    {
+      "title": "Welding",
+      "desc": "Learn flux-core welding at any skill level. We provide materials and safety gear.",
+      "image": "/images/welding.jpg"
+    },
+    {
+      "title": "Physics Show",
+      "desc": "Build and run live demos for Foothill's physics show, seen by 20,000+ guests a year.",
+      "image": "/images/physics-show.jpg"
+    }
+  ],
+  "starterIdeas": {
+    "firstBuilds": [
+      {
+        "title": "Freefall",
+        "desc": "Build your own marble run, like the one everyone presses in the physics hallway."
+      },
+      {
+        "title": "Vapor Trail",
+        "desc": "A cloud chamber that lets you see subatomic particle trails with dry ice and rubbing alcohol."
+      },
+      {
+        "title": "Hover",
+        "desc": "A small magnetic levitation stand where something just floats."
+      },
+      {
+        "title": "Talon",
+        "desc": "A small hydraulic gripping arm built from basic tubing and fluid pressure. No shop required."
+      }
+    ],
+    "biggerBuilds": [
+      {
+        "title": "Pathfinder",
+        "desc": "A line-following or maze-solving robot."
+      },
+      {
+        "title": "Current",
+        "desc": "A small wind or water turbine that actually charges a battery."
+      },
+      {
+        "title": "Span",
+        "desc": "A load-tested bridge. Design it, build it, break it, see what it actually took."
+      }
+    ],
+    "nicheBuilds": [
+      {
+        "title": "Voltaic",
+        "desc": "Build a working battery or fuel cell from scratch."
+      },
+      {
+        "title": "Skyward",
+        "desc": "An autonomous drone with a custom flight controller."
+      },
+      {
+        "title": "Pulse",
+        "desc": "An EMG-controlled prosthetic hand that reads a muscle signal to move the fingers."
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "officers": [
+    { "role": "Co-Presidents", "people": [
+      "Natasha Sidki",
+      "Danielle Mutuc"
+    ] },
+    { "role": "Media Team", "people": [
+      "Devansh Kanda"
+    ] },
+    { "role": "Treasurer", "people": [
+      "Ashraf Mohammed",
+      "Hayden Honjo (In Training)"
+    ] },
+    { "role": "Secretaries", "people": [
+      "Yash Panwar",
+      "Andrey"
+    ] },
+    { "role":  "CAD Workshop Lead", "people": [
+      "Timeo"
+    ]}
+  ],
+  "advisors": [
+    "Frank Cascarano",
+    "Sarah Parikh",
+    "Ed",
+    "Caleb Zerger"
+  ]
+}

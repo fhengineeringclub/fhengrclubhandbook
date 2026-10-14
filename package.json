@@ -1,0 +1,24 @@
+{
+  "name": "fhengrclubhandbook",
+  "version": "1.0.0",
+  "description": "=====================================================================\r FOOTHILL ENGINEERING CLUB WEBSITE\r =====================================================================",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fhengineeringclub/fhengrclubhandbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fhengineeringclub/fhengrclubhandbook/issues"
+  },
+  "homepage": "https://github.com/fhengineeringclub/fhengrclubhandbook#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}
