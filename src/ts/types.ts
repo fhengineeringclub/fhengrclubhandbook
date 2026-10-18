@@ -30,3 +30,7 @@ export interface EventsData {
         when: string;
     }>;
 }
+
+export interface IconsData {
+    [name: string]: string;
+}

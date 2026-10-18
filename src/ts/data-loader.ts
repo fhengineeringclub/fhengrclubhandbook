@@ -1,6 +1,11 @@
-import {ClubInfo, EventsData, OfficersData, ProjectsData} from "./types";
+import {ClubInfo, EventsData, IconsData, OfficersData, ProjectsData} from "./types";
 
 
+/**
+ * Fetches JSON data from the given URL and returns it as a typed object.
+ * @param url
+ * @author Hayden Honjo
+ */
 export async function fetchJson<T>(url: URL): Promise<T> {
     const response = await fetch(url);
 
@@ -14,42 +19,59 @@ export async function fetchJson<T>(url: URL): Promise<T> {
 export async function loadClubData(): Promise<void> {
     try {
         // Fetch all JSON files concurrently
-        const [info, officersData, projectsData, eventsData] = await Promise.all([
+        const [info, officersData, projectsData, eventsData, iconsData] = await Promise.all([
             fetchJson<ClubInfo>(new URL("../data/info.json", import.meta.url)),
             fetchJson<OfficersData>(new URL("../data/officers.json", import.meta.url)),
             fetchJson<ProjectsData>(new URL("../data/projects.json", import.meta.url)),
-            fetchJson<EventsData>(new URL("../data/events.json", import.meta.url))
+            fetchJson<EventsData>(new URL("../data/events.json", import.meta.url)),
+            fetchJson<IconsData>(new URL("../data/icons.json", import.meta.url))
         ]);
 
-        // 1. Populate Info & Links
+        // 1. Populate SVG icons
+        document.querySelectorAll<SVGElement>('[data-icon]').forEach(icon => {
+            const iconName = icon.dataset.icon;
+            if (iconName && iconsData[iconName]) {
+                icon.innerHTML = iconsData[iconName];
+            }
+        });
+
+        // 2. Populate Info & Links
         document.querySelectorAll<HTMLAnchorElement>('a[href^="mailto:"]').forEach(el => {
             el.href = `mailto:${info.links.email}`;
-            el.querySelector<HTMLElement>('.value')?.replaceChildren(info.links.email);
+            el.querySelector<HTMLElement>('.value')?.replaceChildren(
+                info.links.email
+            );
         });
 
         // Update Discord links
         document.querySelectorAll<HTMLAnchorElement>('a[href*="discord.gg"]').forEach(el => {
             el.href = info.links.discord;
-            el.querySelector<HTMLElement>('.value')?.replaceChildren(info.links.discord.replace('https://', ''));
+            el.querySelector<HTMLElement>('.value')?.replaceChildren(
+                info.links.discord.replace('https://', '')
+            );
         });
 
         // Update Instagram links
         document.querySelectorAll<HTMLAnchorElement>('a[href*="instagram.com"]').forEach(el => {
             el.href = info.links.instagram;
-            el.querySelector<HTMLElement>('.value')?.replaceChildren(info.links.instagram.replace('https://', ''));
+            el.querySelector<HTMLElement>('.value')?.replaceChildren(
+                info.links.instagram.replace('https://', '')
+            );
         });
 
         // Update Linktree links
         document.querySelectorAll<HTMLAnchorElement>('a[href*="linktr.ee"]').forEach(el => {
             el.href = info.links.linktree;
-            el.querySelector<HTMLElement>('.value')?.replaceChildren(info.links.linktree.replace('https://', ''));
+            el.querySelector<HTMLElement>('.value')?.replaceChildren(
+                info.links.linktree.replace('https://', '')
+            );
         });
 
         // Update Meeting Location & Time
         document.querySelectorAll<HTMLElement>('#contact .callout p, .meeting-details')
             .forEach(el => el.textContent = `${info.room}, ${info.schedule}`);
 
-        // 2. Populate Projects Grid
+        // 3. Populate Projects Grid
         const projGrid = document.querySelector('.proj-grid');
         if (projGrid) {
             projGrid.innerHTML = Object.entries(projectsData.projects).map(([title, project]) => `
@@ -66,7 +88,7 @@ export async function loadClubData(): Promise<void> {
             rcPlaneImage.src = rcPlane.image;
         }
 
-        // 3. Populate Events Timeline
+        // 4. Populate Events Timeline
         const timeline = document.querySelector('.timeline');
         if (timeline) {
             timeline.innerHTML = eventsData.events.map(e => `
@@ -74,10 +96,9 @@ export async function loadClubData(): Promise<void> {
       `).join('');
         }
 
-        // 4. Populate Officers
+        // 5. Populate Officers
         const officersContainer = document.querySelector('.officers');
         if (officersContainer) {
-            // Add faculty advisors callout inside or right after
             officersContainer.innerHTML = officersData.officers.map(o => `
         <div class="officer-card">
           <p class="role-name">${o.role}</p>
