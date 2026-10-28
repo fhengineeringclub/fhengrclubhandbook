@@ -5,19 +5,23 @@
       "Danielle Mutuc"
     ] },
     { "role": "Media Team", "people": [
-      "Devansh Kanda"
+      "Devansh Kanda",
+      "Andrey Paraketsov"
     ] },
     { "role": "Treasurer", "people": [
       "Ashraf Mohammed",
-      "Hayden Honjo (In Training)"
+      "Hayden Honjo (Intern)"
     ] },
     { "role": "Secretaries", "people": [
       "Yash Panwar",
-      "Andrey Borbas (In Training)"
+      "Khelsey Takeshima (Intern)"
     ] },
     { "role":  "CAD Workshop Lead", "people": [
       "Timeo Vatton Raclot"
-    ]}
+    ] },
+    { "role": "ICC Representative", "people": [
+      "Ben Asanbekov"
+    ] }
   ],
   "advisors": [
     "Frank Cascarano",
