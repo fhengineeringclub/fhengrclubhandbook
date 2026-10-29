@@ -1,0 +1,8 @@
+/* ---------- 3. HERO (top of page) ---------- */
+.hero{background:var(--navy-dark); color:var(--cream)}
+.hero-photo{width:100%; height:56vw; max-height:420px; object-fit:cover}
+.hero .content{padding:36px 20px 44px}
+.hero h1{font-size:clamp(2.1rem,9vw,3rem); color:var(--cream); margin-top:10px}
+.hero h1 em{font-style:normal; color:var(--gold)}
+.tagline{margin-top:16px; color:#c3cee6; font-size:15px; letter-spacing:.5px}
+

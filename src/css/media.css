@@ -1,0 +1,5 @@
+/* ---------- 5. TWO-COLUMN TEXT + PHOTO BLOCK ---------- */
+.media-block{display:flex; flex-direction:column; gap:20px}
+.media-block .text{order:1}
+.media-block .photo{order:2; margin:0}
+

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500..700&family=Public+Sans:wght@400..700&display=swap');
+
+ /* ---------- 1. COLORS AND BASICS ---------- */
+:root{
+    --navy-dark:#0d1c38;
+    --navy:#14284d;
+    --cream:#f7f2e7;
+    --cream-2:#efe6d2;
+    --gold:#c69a44;
+    --gold-light:#e6c98a;
+    --ink:#14284d;
+    --muted:#4a5468;
+    --hair:#e2d9c2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:110px} /* keeps headings from hiding under the sticky nav */
+body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Public Sans', Arial, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+    font-family:'Oswald', Arial, sans-serif;
+    text-transform:uppercase;
+    line-height:1.1;
+    margin:0;
+}
+p{margin:0}
+img{display:block; max-width:100%; height:auto}
+a{color:inherit}
+.wrap{padding:0 20px}
+.muted{color:var(--muted)}
+
+/* all inline icons share these settings */
+svg.i{fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+
+/* small gold label above a heading */
+.eyebrow{
+    font-family:'Oswald', Arial, sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold);
+}
+.eyebrow.light{color:var(--gold-light)}
+

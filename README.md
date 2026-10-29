@@ -3,9 +3,9 @@ FOOTHILL ENGINEERING CLUB WEBSITE
 =====================================================================
 
 HOW THIS SITE IS ORGANIZED
-1. <style>   all colors, fonts, and layout (top of the file)
+1. src/css/  modular stylesheets imported by style.css
 2. <body>    the page itself, one <section> per part, each with a label
-3. <script>  small bits of behavior (bottom of the file)
+3. src/ts/   small bits of behavior
 
 THINGS THAT CHANGE OFTEN: search the file for the word  EDIT:
 - Proposal form link

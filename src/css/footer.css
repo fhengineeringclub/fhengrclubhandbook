@@ -1,0 +1,62 @@
+/* ---------- 7. FOOTER, BACK-TO-TOP, FUN EXTRAS ---------- */
+footer{background:var(--navy-dark); color:var(--cream); text-align:center; padding:56px 20px 44px}
+footer img{width:74px; height:74px; object-fit:contain; margin:0 auto}
+footer h2{font-size:clamp(1.8rem,8vw,2.6rem); color:var(--cream); margin-top:20px}
+footer p{color:#c3cee6; margin:14px auto 0; font-size:15.5px; line-height:1.6; max-width:520px}
+.foot-links{margin-top:26px; display:flex; flex-direction:column; gap:8px}
+.foot-links a{color:var(--gold-light); text-decoration:none; font-size:14.5px}
+footer .credit{margin-top:34px; font-size:12px; color:#7f8caf; letter-spacing:.3px}
+
+.to-top{
+    position:fixed; left:18px; bottom:18px; z-index:60;
+    width:48px; height:48px; border-radius:50%;
+    background:var(--gold); color:var(--navy-dark);
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none; box-shadow:0 4px 14px rgba(0,0,0,.28);
+}
+.to-top svg{width:22px; height:22px; stroke-width:2.4}
+
+/* the cinder block photo that pops in while you scroll */
+.reveal-pop{background:var(--navy-dark); padding:44px 20px; text-align:center; overflow:hidden}
+.reveal-pop-inner{max-width:320px; margin:0 auto}
+.reveal-pop img{
+    width:230px; margin:0 auto;
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));
+    opacity:0; transform:scale(.4) rotate(-14deg);
+    transition:opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1);
+}
+.reveal-pop.in-view img{opacity:1; transform:scale(1) rotate(0deg)}
+.reveal-pop p{
+    color:var(--gold-light); font-size:13.5px; margin-top:16px; line-height:1.5;
+    opacity:0; transform:translateY(8px);
+    transition:opacity .5s ease .2s, transform .5s ease .2s;
+}
+.reveal-pop.in-view p{opacity:1; transform:translateY(0)}
+
+/* click anywhere: a fish or a plane flies across the screen */
+.fish-swim, .plane-fly{
+    position:fixed; left:0; z-index:80;
+    pointer-events:none; opacity:0;
+    filter:drop-shadow(0 8px 16px rgba(0,0,0,.35));
+}
+.fish-swim{top:38%; width:190px; animation:fishSwim 6s ease-in-out forwards}
+.plane-fly{top:16%; width:260px; left:-14%; animation:planeFly 5.5s ease-in-out forwards}
+@keyframes fishSwim{
+    0%{transform:translate(-30vw,0) rotate(-3deg); opacity:0}
+    8%{opacity:1}
+    25%{transform:translate(30vw,-22px) rotate(2deg)}
+    50%{transform:translate(65vw,10px) rotate(-2deg)}
+    75%{transform:translate(100vw,-16px) rotate(2deg)}
+    92%{opacity:1}
+    100%{transform:translate(140vw,0) rotate(0deg); opacity:0}
+}
+@keyframes planeFly{
+    0%{transform:translate(-15vw,-8vh) rotate(-4deg); opacity:0}
+    10%{opacity:1}
+    30%{transform:translate(35vw,3vh) rotate(2deg)}
+    55%{transform:translate(70vw,-5vh) rotate(-2deg)}
+    80%{transform:translate(105vw,6vh) rotate(3deg)}
+    92%{opacity:1}
+    100%{transform:translate(135vw,12vh) rotate(4deg); opacity:0}
+}
+

@@ -1,0 +1,167 @@
+/* ---------- 6. CARDS ---------- */
+.cards{display:flex; flex-direction:column; gap:16px; margin-top:22px}
+.card{
+    background:#fff; border:1px solid var(--hair); border-radius:16px;
+    padding:22px; display:flex; flex-direction:column; gap:10px;
+}
+.card .num{font-family:'Oswald',Arial,sans-serif; font-size:32px; font-weight:700; color:var(--gold)}
+.card h3{font-size:19px; text-transform:none; font-weight:700}
+.card p{font-size:15px; color:var(--muted); line-height:1.5}
+
+/* rotating project carousel */
+.project-carousel{
+    position:relative;
+    display:flex;
+    align-items:center;
+    width:100vw;
+    margin:22px 0 0 calc(50% - 50vw);
+}
+.proj-grid{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    scroll-snap-type:none;
+    scrollbar-width:none;
+    padding:18px 20px 24px;
+    cursor:grab;
+    width:100%;
+    touch-action:pan-y;
+}
+.proj-grid::-webkit-scrollbar{display:none}
+.proj-grid.is-dragging{cursor:grabbing; scroll-snap-type:none}
+.proj{
+    background:#fff; border:1px solid var(--hair); border-radius:16px;
+    overflow:hidden; display:flex; flex-direction:column; gap:14px; padding:14px;
+    flex:0 0 min(82vw, 290px);
+    scroll-snap-align:center;
+    transform:perspective(900px) rotateY(var(--card-tilt, 0deg)) scale(var(--card-depth, 1));
+    transition:transform .3s ease, box-shadow .3s ease;
+    box-shadow:0 5px 12px rgba(20,40,77,.08);
+    user-select:none;
+}
+.proj:hover{
+    transform:perspective(900px) rotateY(0deg) scale(1.06) translateY(-5px);
+    box-shadow:0 14px 28px rgba(20,40,77,.18);
+    z-index:1;
+}
+.proj.is-selected{
+    transform:perspective(900px) rotateY(0deg) scale(1.16) translateY(-8px);
+    box-shadow:0 18px 34px rgba(20,40,77,.24);
+    z-index:3;
+}
+.proj img{width:100%; height:170px; border-radius:12px; object-fit:cover; flex:0 0 auto; pointer-events:none}
+.proj h3{font-size:17px; text-transform:none; font-weight:700; margin-bottom:4px}
+.proj p{font-size:14px; color:var(--muted); line-height:1.45}
+
+/* starter idea cards (swipe sideways on phones) */
+.idea-wrap{margin-top:40px; padding-top:32px; border-top:1px solid var(--hair)}
+.idea-wrap h3{font-size:1.4rem; margin-top:6px}
+.idea-tier{margin-top:22px}
+.idea-tier-label{
+    font-family:'Oswald', Arial, sans-serif; font-size:12.5px; font-weight:600;
+    letter-spacing:2px; text-transform:uppercase; color:var(--gold);
+    padding-bottom:8px; border-bottom:2px solid var(--hair); margin-bottom:14px;
+}
+.idea-grid{
+    display:flex; gap:12px;
+    overflow-x:auto; scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    margin:0 -20px; padding:2px 20px 10px;
+}
+.idea-grid::-webkit-scrollbar{display:none}
+.idea-card{
+    background:#fff; border:1px solid var(--hair); border-radius:14px; padding:16px 18px;
+    flex:0 0 80%; scroll-snap-align:start;
+}
+.idea-card h4{font-size:16px; font-weight:700; color:var(--navy); margin:0}
+.idea-card p{font-size:14px; color:var(--muted); margin-top:4px; line-height:1.45}
+
+/* resource cards (photo on top) */
+.resource-grid{display:flex; flex-direction:column; gap:16px}
+.resource{background:#fff; border:1px solid var(--hair); border-radius:16px; overflow:hidden; display:block; text-decoration:none; color:inherit}
+.resource img{width:100%; aspect-ratio:16/10; object-fit:cover}
+.resource img.contain{object-fit:contain; background:var(--cream-2); padding:14px}
+.resource .body{padding:18px 20px}
+.resource h3{font-size:18px; text-transform:none; font-weight:700}
+.resource p{font-size:14.5px; color:var(--muted); margin-top:6px; line-height:1.5}
+
+/* numbered steps */
+.steps{display:flex; flex-direction:column; gap:14px; margin-top:22px}
+.step{display:flex; gap:14px; align-items:flex-start}
+.step .n{
+    font-family:'Oswald',Arial,sans-serif; font-size:22px; font-weight:700;
+    color:var(--gold); width:30px; flex:0 0 auto;
+}
+.step h3{font-size:16.5px; text-transform:none; font-weight:700}
+.step p{font-size:14.5px; color:var(--muted); margin-top:2px; line-height:1.45}
+section.dark .step p{color:#c3cee6}
+
+/* role cards with an icon */
+.roles{display:flex; flex-direction:column; gap:14px; margin-top:22px}
+.role{display:flex; gap:16px; background:#fff; border:1px solid var(--hair); border-radius:16px; padding:20px; align-items:flex-start}
+.role .icon, .contact-row .icon{
+    border-radius:12px; background:var(--navy); color:var(--gold-light);
+    display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+}
+.role .icon{width:48px; height:48px}
+.role .icon svg{width:24px; height:24px}
+.role h3{font-size:17px; text-transform:none; font-weight:700}
+.role p{font-size:14.5px; color:var(--muted); margin-top:3px; line-height:1.45}
+.role .tag{font-size:12px; color:#8a8265; font-weight:600}
+
+/* "Read More" dropdowns (built in to the browser, no script needed) */
+details.reveal{margin-top:18px}
+.reveal-toggle{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--navy); color:var(--cream);
+    border-radius:999px; padding:11px 20px;
+    font-family:'Oswald', Arial, sans-serif; font-size:12.5px; font-weight:600;
+    letter-spacing:1.5px; text-transform:uppercase; cursor:pointer;
+    list-style:none;
+}
+.reveal-toggle::-webkit-details-marker{display:none}
+.reveal-toggle::after{  /* the little down arrow */
+    content:""; width:7px; height:7px; margin-top:-3px;
+    border-right:2px solid currentColor; border-bottom:2px solid currentColor;
+    transform:rotate(45deg); transition:transform .2s ease;
+}
+details[open] > .reveal-toggle::after{transform:rotate(225deg); margin-top:3px}
+.reveal-toggle.inline{background:none; color:var(--gold); padding:0; margin-top:8px; font-size:12.5px; letter-spacing:1px}
+.reveal-body{margin-top:22px}
+.role .reveal-body{margin-top:8px}
+.role .reveal-body p{font-size:14.5px; color:var(--muted); line-height:1.45}
+
+/* officers */
+.officers{display:flex; flex-direction:column; gap:14px; margin-top:22px}
+.officer-card{background:rgba(255,255,255,.06); border:1px solid rgba(230,201,138,.25); border-radius:14px; padding:20px}
+.officer-card .role-name{font-family:'Oswald',Arial,sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light)}
+.officer-card .people{font-size:18px; font-weight:700; margin-top:6px}
+.officer-card .tbd{font-weight:500; opacity:.75}
+
+/* contact rows */
+.contact-rows{display:flex; flex-direction:column; gap:14px; margin-top:22px}
+.contact-row{display:flex; gap:14px; align-items:center; text-decoration:none; color:inherit}
+.contact-row .icon{width:46px; height:46px}
+.contact-row .icon svg{width:22px; height:22px}
+.contact-row .label{font-size:12px; text-transform:uppercase; letter-spacing:1px; color:#8a8265}
+.contact-row .value{font-size:16.5px; font-weight:600; word-break:break-word; text-decoration:underline; text-decoration-color:var(--hair); text-underline-offset:3px}
+
+/* events timeline */
+.timeline{margin-top:22px; display:flex; flex-direction:column}
+.tl-row{display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid rgba(230,201,138,.2)}
+.tl-row:last-child{border-bottom:none}
+.tl-row .what{font-weight:600; font-size:15px}
+.tl-row .when{font-size:14px; color:var(--gold-light); white-space:nowrap; text-align:right}
+
+/* proposal form button */
+.btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--navy); color:var(--cream) !important;
+    font-weight:700; font-size:15.5px;
+    padding:14px 22px; border-radius:999px;
+    text-decoration:none; margin-top:20px;
+}
+.btn svg{width:18px; height:18px}
+.btn-note{font-size:12.5px; color:#8a8265; margin-top:8px}
+
